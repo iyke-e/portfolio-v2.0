@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@utility pad-auto {
+  @apply px-4 md:px-8 lg:px-16;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pulsate {
+  animation: dis-appear 3s linear forwards infinite;
+}
+
+@keyframes dis-appear {
+  0% {
+    opacity: 20%;
+    color: rgb(247, 247, 247);
+  }
+
+  25% {
+    opacity: 8%;
+    color: green;
+  }
+  50% {
+    opacity: 5%;
+    color: red;
+  }
+  75% {
+    opacity: 8%;
+    color: yellow;
+  }
+  100% {
+    opacity: 20%;
+    color: rgb(247, 247, 247);
+  }
+}
+.sliderparent {
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.slider_re {
+  animation: slideRe 50s linear forwards infinite;
+}
+
+.slider {
+  animation: slide 50s linear forwards infinite;
+}
+
+@keyframes slide {
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes slideRe {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.loading {
+  animation: loadingAnimation 6s linear infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.scaleup {
+  animation: scaleupAnimation 1s ease-in-out;
+}
+
+@keyframes scaleupAnimation {
+  0% {
+    translate: 0 0;
+    scale: 1;
+    opacity: 1;
+    transform-origin: top right;
+  }
+  100% {
+    translate: -300px -400px;
+    scale: 4;
+    opacity: 0;
+  }
+}
+
+.slideOutLeft {
+  animation: slideOutLeftAnimation 0.5s forwards;
+}
+.slideInRight {
+  animation: slideInRightAnimation 0.5s forwards;
+}
+
+@keyframes slideOutLeftAnimation {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+@keyframes slideInRightAnimation {
+  0% {
+    transform: translate(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientDance {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradientAnimate {
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.1)
+  );
+  background-size: 200% 200%;
+  animation: gradientDance 4s linear forwards infinite alternate;
+}
+
+.stop-scroll {
+  height: 100dvh;
+  overflow: hidden;
+}
