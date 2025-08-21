@@ -19,6 +19,7 @@ import Zustand from "@/assets/zustand.svg"
 import Js from "@/assets/javascript.svg"
 import Ts from "@/assets/typescript.svg"
 import Vscode from "@/assets/vscode.svg"
+import Vercel from "@/assets/vercel.svg"
 
 export interface StackItem {
     name: string;
@@ -59,6 +60,11 @@ export const stackList: StackItem[] = [
     {
         name: "VScode",
         icon: Vscode
+    },
+   
+    {
+        name: "Vercel",
+        icon: Vercel
     },
    
     
