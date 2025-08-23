@@ -1,11 +1,18 @@
+"use client"
+
 import React from 'react'
 import LogoIcon from '../ui/LogoIcon'
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { TfiEmail } from "react-icons/tfi";
 import Link from 'next/link';
+import ThemeToggle from '../ui/ThemeToggle';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+    const pathname = usePathname()
+
+
     return (
         <div className='pad-auto border-t border-white/20 pt-10'>
             <div className='pb-4'>
@@ -39,18 +46,24 @@ const Footer = () => {
 
 
                     <ul className='flex gap-4 justify-end items-center'>
-                        <li>
-                            <Link href="/portfolio">Porfolio</Link>
-                        </li>
-                        <li>
-                            <Link href="/portfolio">About Me</Link>
-                        </li>
-                        <li>
-                            <Link href="/portfolio">Contact</Link>
-                        </li>
+                        {navLinks.map((link) => {
+                            const isActive = pathname === link.href;
+                            return (
+                                <li key={link.href}
+                                >
+                                    <Link
+                                        href={link.href}
+                                        className={`${isActive ? "text-accent" : ""
+                                            } hover:text-accent-hover text-sm px-4 py-2 rounded-lg transition duration-600`}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+
+                            );
+                        })}
                     </ul>
                 </div>
-
 
             </div>
             <div className='flex text-center gap-2 flex-col-reverse md:flex-row md:justify-between border-t py-4 border-white/20'>
@@ -61,3 +74,9 @@ const Footer = () => {
 }
 
 export default Footer
+
+const navLinks = [
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+];

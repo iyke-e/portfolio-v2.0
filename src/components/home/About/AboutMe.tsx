@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import dp from "@/assets/nobgimg.png"
-import Aipics from "@/assets/aipics.png"
+import Aipics from "@/assets/iyke.jpg"
 import { stackList } from '@/data/stacklist'
 import TechStack from './TechStack'
 

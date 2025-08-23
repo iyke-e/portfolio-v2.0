@@ -1,5 +1,5 @@
 import React from 'react'
-import Aipics from "@/assets/aipics.png"
+import Aipics from "@/assets/iyke.jpg"
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
@@ -20,7 +20,7 @@ const About = () => {
                 </h1>
 
                 <div className='grid md:grid-cols-[3fr_2fr] gap-6 md:gap-16 md:items-center'>
-                    <div className='block md:order-2  h-120 md:aspect-[3/4] bg-top bg-cover bg-no-repeat' style={{ backgroundImage: `url(${Aipics.src})` }} />
+                    <div className='block md:order-2  h-100 md:aspect-[3/4]  bg-cover bg-center bg-no-repeat' style={{ backgroundImage: `url(${Aipics.src})` }} />
                     <div className='md:order-1'>
                         <p className='text-lg  leading-8'>
                             I am Ikechukwu Egwim, a proactive software developer passionate about creating smooth dynamic web experiences. from Web to Mobile, I thrive on solving complex problems with clean, optimized and efficient code. My expertise include React, Next.js and Node.js, and I am always eager to learn More

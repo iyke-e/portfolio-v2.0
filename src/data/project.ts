@@ -12,7 +12,20 @@ export type projectProp = {
 }
 
 
-export const project = [
+export const project = [ {
+    featured: true,
+    category: "web",
+    name: "ShowcaseHub",
+    description:
+      "ShowcaseHub lets you build a personal project gallery, manage your portfolio projects, and collaborate with others—all in one place.",
+    stack: ["React", "CSS", "MongoDB", "Node JS", "Express JS"],
+    liveUrl: "https://showcaseh.vercel.app/",
+    sourceUrl: "githublink.com",
+    imageUrl:
+      "https://ucarecdn.com/28bb37f2-115e-476b-9ec4-7198fa2e3248/-/preview/1000x762/",
+    tags: ["Fullstack", "Dashboards", "Collaboration"],
+    projectType: ["Dashboards"]
+  },
   {
     id: 1,
     featured: true,
@@ -28,20 +41,21 @@ export const project = [
     tags: ["Fullstack", "Web Apps", "Dashboards", "AI/ML"],
     projectType: ["Web Apps", "Dashboards"]
   },
-  {
-    id: 2,
-    featured: true,
+ 
+    {
+    id: 10,
+    featured: false,
     category: "web",
-    name: "ShowcaseHub",
+    name: "Personal Portfolio v1.0",
     description:
-      "ShowcaseHub lets you build a personal project gallery, manage your portfolio projects, and collaborate with others—all in one place.",
-    stack: ["React", "CSS", "MongoDB", "Node JS", "Express JS"],
-    liveUrl: "liveurlhere.com",
-    sourceUrl: "githublink.com",
+      "Portfolio website built with React and custom REST API, featuring responsive design, database integration, and seamless interactions.",
+    stack: ["React", "CSS", "MongoDB", "Express JS", "Node JS"],
+    liveUrl: "https://personal-portfolio-v-2-0.pages.dev/",
+    sourceUrl: "https://github.com/iyke-e/personal-portfolio-v.2.0",
     imageUrl:
-      "https://ucarecdn.com/28bb37f2-115e-476b-9ec4-7198fa2e3248/-/preview/1000x762/",
-    tags: ["Fullstack", "Dashboards", "Collaboration"],
-    projectType: ["Dashboards"]
+      "https://ucarecdn.com/fe937da7-2b4b-464a-be23-aef8ae6ca059/personalportfoliov20.png",
+    tags: ["React", "Fullstack", "MongoDB"],
+    projectType: ["Web Apps", "Advanced"]
   },
   {
     id: 3,
@@ -73,51 +87,9 @@ export const project = [
     tags: ["React", "Frontend", "Responsive"],
     projectType: ["UI/Design"]
   },
-  {
-    id: 5,
-    featured: true,
-    category: "web",
-    name: "Room Homepage",
-    description:
-      "A Room Homepage website created using vanilla JS, featuring a slider and responsive layout.",
-    stack: ["HTML", "SCSS", "JavaScript"],
-    liveUrl: "https://room-homepage-iyke.pages.dev/",
-    sourceUrl: "https://github.com/iyke-e/room-homepage",
-    imageUrl:
-      "https://ucarecdn.com/a3d56a86-4e62-4120-9b12-29f3ee4d1367/roomhomepage.png",
-    tags: ["Frontend", "Responsive", "UI"],
-    projectType: ["UI/Design"]
-  },
-  {
-    id: 6,
-    featured: false,
-    category: "web",
-    name: "Chat App CSS Illustration",
-    description:
-      "A chat app illustration website created entirely with CSS from scratch.",
-    stack: ["HTML", "SCSS"],
-    liveUrl: "https://iyke-e.github.io/chat-app-css/",
-    sourceUrl: "https://github.com/iyke-e/chat-app-css",
-    imageUrl:
-      "https://ucarecdn.com/7357aeb4-3644-4835-9c25-7a3140ccc43b/chatapp.png",
-    tags: ["CSS Art", "Frontend", "Creative"],
-    projectType: ["UI/Design"]
-  },
-  {
-    id: 7,
-    featured: false,
-    category: "web",
-    name: "Social Media Dashboard",
-    description:
-      "A simple social media dashboard landing page with dark and light mode toggle.",
-    stack: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "https://iyke-e.github.io/social-media-dashboard/",
-    sourceUrl: "https://github.com/iyke-e/social-media-dashboard",
-    imageUrl:
-      "https://ucarecdn.com/e6ff052e-e17f-4e2f-8be1-fe4bc0c947ab/Socialmediadashboard.png",
-    tags: ["UI", "Frontend", "Responsive"],
-    projectType: ["UI/Design"]
-  },
+
+
+
   {
     id: 8,
     featured: false,
@@ -148,34 +120,6 @@ export const project = [
     tags: ["API", "Frontend", "Map"],
     projectType: ["Web Apps"]
   },
-  {
-    id: 10,
-    featured: false,
-    category: "web",
-    name: "Shopify Merchant Onboarding Dashboard",
-    description:
-      "Solution to a Hackathon challenge, recreated the Figma design with full accessibility and responsive layout.",
-    stack: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "https://shopify-merchant-onboarding-dashboard.pages.dev/",
-    sourceUrl: "https://github.com/iyke-e/Shopify-merchant-onboarding-dashboard",
-    imageUrl:
-      "https://ucarecdn.com/fed4b343-e03e-4680-b8fb-c7dfb70f1359/shorpifymerchantonboardingpage.png",
-    tags: ["UI", "Frontend", "Accessibility"],
-    projectType: ["UI/Design", "Dashboards"]
-  },
-  {
-    id: 11,
-    featured: false,
-    category: "web",
-    name: "Personal Portfolio v2.0",
-    description:
-      "Portfolio website built with React and custom REST API, featuring responsive design, database integration, and seamless interactions.",
-    stack: ["React", "CSS", "MongoDB", "Express JS", "Node JS"],
-    liveUrl: "https://personal-portfolio-v-2-0.pages.dev/",
-    sourceUrl: "https://github.com/iyke-e/personal-portfolio-v.2.0",
-    imageUrl:
-      "https://ucarecdn.com/fe937da7-2b4b-464a-be23-aef8ae6ca059/personalportfoliov20.png",
-    tags: ["React", "Fullstack", "MongoDB"],
-    projectType: ["Web Apps", "Advanced"]
-  }
+
+
 ];

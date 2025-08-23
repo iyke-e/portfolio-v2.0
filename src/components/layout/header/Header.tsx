@@ -48,8 +48,8 @@ const Header = () => {
                                 >
                                     <Link
                                         href={link.href}
-                                        className={`${isActive ? " bg-white/15" : ""
-                                            } hover:bg-white/15 text-sm px-4 py-2 rounded-lg transition duration-600`}
+                                        className={`${isActive ? "text-accent" : ""
+                                            } hover:text-accent-hover text-sm px-4 py-2 rounded-lg transition duration-600`}
                                     >
                                         {link.name}
                                     </Link>
