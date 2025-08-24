@@ -28,7 +28,7 @@ const Header = () => {
 
 
     return (
-        <header className='relative bg-background isolation-auto z-99999'>
+        <header className='relative isolation-auto z-99999'>
             <div className='flex justify-between items-center h-15 md:h-20 pad-auto'>
                 <LogoIcon />
                 <div onClick={() => { setMenuOpen(!menuOpen), toggleScroll() }} className='flex gap-2 items-center md:hidden'>
@@ -63,7 +63,7 @@ const Header = () => {
 
                 <div className='hidden md:block   cursor-pointer'>
                     <a target='_blank' href={"/Egwim_Ikechukwu_Resume.pdf"} >
-                        <Button className='rotate-10 transition duration-200 cursor-pointer hover:rotate-0'>Resume</Button>
+                        <Button variant='white' className='rotate-10 transition duration-200 cursor-pointer hover:rotate-0'>Resume</Button>
                     </a>
                 </div>
 

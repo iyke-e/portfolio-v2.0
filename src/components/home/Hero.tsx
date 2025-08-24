@@ -1,57 +1,77 @@
+"use client"
+
 import Image from 'next/image';
 import React from 'react'
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
-import Aipics from "@/assets/aipics.png"
 import { stackList } from '@/data/stacklist';
+import Button from '../ui/Button';
+import ProfileCard from '../ui/animations/ProfileCard';
+import { useRouter } from 'next/navigation';
+
+
+
 
 const Hero = () => {
+    const router = useRouter()
+
+
 
     const duplicateStackList = [...stackList, ...stackList]
     return (
-        <div className='relative pt-8 md:pt-4 '>
+        <div className='relative pt-10 md:pt-20'>
             <div className='pad-auto relative'>
-                <div className='mb-10 md:ml-auto md:pr-20 w-fit space-y-2'>
-                    <div className='block  h-40  rounded-2xl w-32 bg-top bg-cover bg-no-repeat' style={{ backgroundImage: `url(${Aipics.src})` }} />
-                    <p className='text-center'>Egwim Ikechukwu</p>
-                </div>
-
-                <p className='absolute  opacity-10 top-10 right-0 md:left-20 md:right-0 text-center w-fit leading-8 -rotate-45 md:-rotate-35 '>React + React Native + Next.js
-                    <br /> Redux + Node + Jest
-                </p>
 
 
-
-
-                <div className='md:flex items-end md:-mt-20' >
+                <div className='md:flex gap-16 items-center' >
                     <div className='w-fit mb-10 md:mb-0'>
-                        <h1 className='text-7xl mb-2 md:text-[10rem] '>Software <br /> Developer </h1>
-                        <div className='flex  gap-4 items-center justify-end'>
+                        <p className='opacity-10 mb-4 w-fit leading-8  '>React + React Native + Next.js +  Redux + Node
+                        </p>
+                        <div >
+                            <h1 className='text-3xl md:text-6xl  max-w-220 leading-10 mb-6 md:leading-16 '>
+                                Frontend Developer building fast, clean & user-friendly experiences
+                            </h1>
+                            <p className='text-gray-500 max-w-150'>I build fast, responsive, and user-friendly applications with React, Next.js, and modern UI tools.</p>
 
-                            <a className='text-2xl hover:text-gray-500' target='_blank' href={"https://github.com/iyke-e"}>
-                                <FaGithub className='w-8 h-8' />
-
-                            </a>
-                            <a className='text-2xl hover:text-gray-500' target='_blank' href={"https://linkedin.com/in/iyke-gp"}>
-                                <FaLinkedin className='w-8 h-8' />
-
-                            </a>
                         </div>
+                        <div className='flex mt-8 gap-4'>
+                            <Button>Explore Project</Button>
+                            <Button variant='white'>Get in Touch</Button>
+                        </div>
+
+
 
                     </div>
 
-                    <p className='w-fit text-right ml-auto'>Hi, I’m  Ikechukwu,
-                        A Software <br /> Developer specializing in creating <br /> clean, seamless digital experiences <br /> on
-                        both web and mobile.
-                    </p>
+
+
+                    <ProfileCard
+                        name="Egwim Iyke"
+                        title="Frontend Developer"
+                        handle="IykeCodes"
+                        status="Online"
+                        contactText="Contact Me"
+                        avatarUrl="/bgMobile.jpg"
+                        showUserInfo={true}
+                        enableTilt={true}
+                        enableMobileTilt={false}
+                        onContactClick={() => router.push("/contact")}
+                        className='hidden md:block'
+                    />
+
+
+
+
+
+
 
                 </div>
 
 
             </div>
 
-            <div className='sliderparent overflow-hidden mb-5 my-16 md:my-20'>
-                <ul className='flex slider w-max'>
+
+
+            <div className='sliderparent overflow-hidden  mb-5 my-16 md:my-20'>
+                <ul className='flex slider w-max border-t  border-b py-3 border-white/20'>
                     {
                         duplicateStackList.map((stack, index) => <li
                             className='flex mr-4 gap-2 grow-0 shrink-0 opacity-80 items-center border border-white/15 rounded-4xl bg-white/10 px-4 py-2 '
@@ -73,30 +93,6 @@ const Hero = () => {
                 </ul>
 
             </div>
-            {/* 
-            <div className='sliderparent overflow-hidden '>
-                <ul className='flex slider_re w-max'>
-                    {
-                        stackList.map((stack, index) => <li
-                            className='flex mr-4 gap-2 grow-0 shrink-0 opacity-80 items-center border border-white/15 rounded-4xl bg-white/10 px-4 py-2 '
-                            key={index}>
-                            <Image
-                                src={stack.icon.src}
-                                width={20}
-                                height={20}
-                                alt={stack.name + "icon"}
-
-                            />
-                            <p>
-                                {stack.name}
-                            </p>
-                        </li>
-                        )
-                    }
-
-                </ul>
-
-            </div> */}
 
 
 

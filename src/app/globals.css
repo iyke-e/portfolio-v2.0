@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import "tailwindcss";
 
-/* ===========================
-   THEME VARIABLES
-   =========================== */
-
 :root {
   /* Dark mode overrides */
   --background: #0a0a0a;
@@ -27,7 +23,6 @@
   --dmsan: "DM Sans", sans-serif;
 }
 
-/* Tailwind theme tokens */
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
@@ -45,11 +40,15 @@
 
   --font-sans: var(--chivo);
   --font-dmsan: var(--dmsan);
+
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }
 
-/* ===========================
-   GLOBAL BASE
-   =========================== */
 @utility pad-auto {
   @apply px-4 md:px-8 lg:px-16;
 }
@@ -69,9 +68,6 @@ h6 {
   font-family: var(--chivo);
 }
 
-/* ===========================
-   ANIMATIONS
-   =========================== */
 .pulsate {
   animation: dis-appear 3s linear forwards infinite;
 }
@@ -99,9 +95,6 @@ h6 {
   }
 }
 
-/* ===========================
-   SLIDER
-   =========================== */
 .sliderparent {
   mask: linear-gradient(
     90deg,
@@ -117,7 +110,7 @@ h6 {
 }
 
 .slider {
-  animation: slide 50s linear forwards infinite;
+  animation: slide 120s linear forwards infinite;
 }
 
 @keyframes slide {
@@ -134,9 +127,6 @@ h6 {
   }
 }
 
-/* ===========================
-   LOADING
-   =========================== */
 .loading {
   animation: loadingAnimation 6s linear infinite;
 }
@@ -150,9 +140,6 @@ h6 {
   }
 }
 
-/* ===========================
-   SCALE UP / TRANSITIONS
-   =========================== */
 .scaleup {
   animation: scaleupAnimation 1s ease-in-out;
 }
@@ -165,7 +152,7 @@ h6 {
     transform-origin: top right;
   }
   100% {
-    translate: -300px -400px;
+    translate: -300px -250px;
     scale: 4;
     opacity: 0;
   }
@@ -199,18 +186,6 @@ h6 {
   }
 }
 
-/* ===========================
-   GRADIENTS
-   =========================== */
-@keyframes gradientDance {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
 .gradientAnimate {
   background: linear-gradient(
     270deg,
@@ -222,9 +197,29 @@ h6 {
   animation: gradientDance 4s linear forwards infinite alternate;
 }
 
-/* ===========================
-   UTILITIES
-   =========================== */
+.gradientAnimateWhite {
+  background: linear-gradient(
+    270deg,
+    color-mix(in srgb, #ffffff 80%, var(--accent) 10%),
+    color-mix(in srgb, #ffffff 50%, var(--success) 10%),
+    color-mix(in srgb, #ffffff 90%, var(--accent) 10%)
+  );
+  background-size: 200% 200%;
+  animation: gradientDance 6s ease-in-out infinite alternate;
+}
+
+@keyframes gradientDance {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .stop-scroll {
   height: 100dvh;
   overflow: hidden;

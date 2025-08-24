@@ -1,5 +1,4 @@
 export type projectProp = {
-    id: number;
     featured: Boolean;
     category: string;
     name: string;
@@ -27,7 +26,6 @@ export const project = [ {
     projectType: ["Dashboards"]
   },
   {
-    id: 1,
     featured: true,
     category: "web",
     name: "CampusCrib",
@@ -43,8 +41,7 @@ export const project = [ {
   },
  
     {
-    id: 10,
-    featured: false,
+    featured: true,
     category: "web",
     name: "Personal Portfolio v1.0",
     description:
@@ -58,7 +55,20 @@ export const project = [ {
     projectType: ["Web Apps", "Advanced"]
   },
   {
-    id: 3,
+    featured: true,
+    category: "web",
+    name: "Space Tourism Website",
+    description:
+      "Complete website using React and SCSS, providing user-friendly space information with responsive design and visual appeal.",
+    stack: ["React js", "SCSS", "Vite"],
+    liveUrl: "https://iykedev-space-website.netlify.app/",
+    sourceUrl: "https://github.com/iyke-e/space-tourism-website",
+    imageUrl:
+      "https://max.ucarecdn.com/94a2388c-2a4a-4c2a-9d8c-68ea5d95f62a/-/preview/812x520/",
+    tags: ["React", "Frontend", "Responsive"],
+    projectType: ["UI/Design"]
+  },
+  {
     featured: false,
     category: "web",
     name: "Rest Country API",
@@ -73,25 +83,6 @@ export const project = [ {
     projectType: ["Web Apps"]
   },
   {
-    id: 4,
-    featured: true,
-    category: "web",
-    name: "Space Tourism Website",
-    description:
-      "Complete website using React and SCSS, providing user-friendly space information with responsive design and visual appeal.",
-    stack: ["React js", "SCSS", "Vite"],
-    liveUrl: "https://iykedev-space-website.netlify.app/",
-    sourceUrl: "https://github.com/iyke-e/space-tourism-website",
-    imageUrl:
-      "https://max.ucarecdn.com/94a2388c-2a4a-4c2a-9d8c-68ea5d95f62a/-/preview/812x520/",
-    tags: ["React", "Frontend", "Responsive"],
-    projectType: ["UI/Design"]
-  },
-
-
-
-  {
-    id: 8,
     featured: false,
     category: "web",
     name: "URL Shortening API Landing Page",
@@ -106,7 +97,6 @@ export const project = [ {
     projectType: ["Web Apps"]
   },
   {
-    id: 9,
     featured: false,
     category: "web",
     name: "IP Address Tracker",

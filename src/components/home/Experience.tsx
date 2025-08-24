@@ -7,7 +7,6 @@ const Experience = () => {
                 <p className='mb-6 px-4 py-2 bg-gradient-to-r from-white/20  to-white/0 w-fit '>Experience</p>
                 <div className='md:flex justify-between items-start'>
                     <h1 className='text-[32px] md:text-5xl max-w-80 md:max-w-140 md:leading-16 mb-4'>My Most Recent Experiences </h1>
-                    <p className='max-w-60 md:max-w-50'>Annual Summary of my Creative Journey throughout the year</p>
                 </div>
             </div>
             <div className='grid'>

@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 
 
 
+
 export const metadata: Metadata = {
   title: "Iykee Portfolio",
   description: "Explore Ikechukwu’s portfolio: innovative web and mobile apps, frontend development, and projects showcasing modern software solutions.",
@@ -24,12 +25,16 @@ export default function RootLayout({
 
       </head>
       <body
-        className={`antialiased`}
+        className={`antialiased `}
+
       >
 
         <Header />
         {children}
         <Footer />
+
+
+
       </body>
     </html>
   );

@@ -1,32 +1,29 @@
-import Image from 'next/image'
 import React from 'react'
-import dp from "@/assets/nobgimg.png"
-import Aipics from "@/assets/iyke.jpg"
-import { stackList } from '@/data/stacklist'
+import Aipics from "@/assets/nobg.png"
 import TechStack from './TechStack'
+import Image from 'next/image'
 
 const AboutMe = () => {
-    const uniqueStack = Array.from(
-        new Map(stackList.map(item => [item.name, item])).values()
-    );
+
     return (
         <div className='py-10 mt-10'>
             <div className='pad-auto mb-6'>
                 <p className='mb-6 px-4 py-2 bg-gradient-to-r from-white/20  to-white/0 w-fit '>About Me</p>
 
 
-                <h1 className='text-[32px] md:text-5xl max-w-80  md:max-w-200 md:leading-16 mb-4'>For me, it’s not  just about pixels or code,
-                    but creating experiences that truly resonate. </h1>
-
-                <div className='max-w-220 mx-auto md:flex gap-8 md:items-center md:justify-end '>
-                    <div className='h-86 w-66 grid place-content-center rounded-full mx-auto gradientAnimate'>
-                        <div className='block  h-80 w-60   rounded-full bg-top bg-cover bg-no-repeat' style={{ backgroundImage: `url(${Aipics.src})` }} />
-                    </div>
+                <h1 className='text-[32px] md:text-5xl text-center mb-4'>The person behind the code. </h1>
 
 
 
-                    <p className='leading-10 text-[20px]  mt-8 md:mt-0'>I’m a Junior Software Developer with 2+ years of professional experience. over the years, I've gained hands-on experience through software engineering and frontend development internships. This year, I graduated in Computer Science from FUNAAB and am now a trainee at Rise Academy, building websites and mobile apps. I specialize in frontend and mobile development, enjoy crafting creative digital experiences, and bring curiosity and a fun, problem-solving mindset to every project I tackle.</p>
-                </div>
+                <p className='leading-8 text-center max-w-220 mx-auto  mt-8 md:mt-0'>I’m Ikechukwu Egwim, a proactive Frontend developer passionate about crafting smooth, dynamic web and mobile experiences. I specialize in React, Next.js, and Node.js, and enjoy solving complex problems with clean, efficient code.
+
+                    When I’m not coding, I love exploring new ideas, listening to music, and traveling. I believe that with consistency and the right mindset, any challenge can be an opportunity to grow.
+
+                </p>
+
+                {/* <Image className='w-100 mx-auto' src={Aipics} alt='aboutImage' /> */}
+
+
 
                 <TechStack />
 
