@@ -1,35 +1,58 @@
-import React from 'react'
-import { LuExternalLink } from "react-icons/lu";
-import { FaGithub } from "react-icons/fa";
-import { projectProp } from '@/data/project';
+"use client"
 
-const ProjectCard = ({ item }: { item: projectProp }) => {
+import React, { useState } from 'react'
+import { LuExternalLink } from "react-icons/lu"
+import { FaGithub } from "react-icons/fa"
+import { ProjectProp } from '@/data/project'
+import Image from 'next/image'
+
+const ProjectCard = ({ item }: { item: ProjectProp }) => {
+    const [overlay, setOverlay] = useState(false)
+
     return (
-        <div className=''>
-            <div style={{ backgroundImage: `url(${item.imageUrl})` }} className='w-full grid items-end  h-60 rounded-[8px] bg-white/40 bg-center bg-cover'>
+        <div className=" cursor-pointer transition duration-[0.7s] hover:scale-103">
 
-                <div className='px-3 pt-3 pb-1 rounded-[8px] bg-gradient-to-t from-background via-background/70 to-black/0 flex justify-between items-center' >
-                    <h3 className='text-xl  line-clamp-1 '>{item.name}</h3>
+            <div
 
+                style={{ backgroundImage: `url(${item.imageUrl})` }}
+                className="w-full h-60 bg-center grid place-content-end mb-1 bg-cover rounded-lg relative"
+            >
 
-                    <div className='flex items-center justify-end gap-6'>
-                        <a target='_blank' href={item.sourceUrl}>
-                            <FaGithub className='w-6 h-6' />
-                        </a>
-                        <a target='_blank' href={item.liveUrl}>
-                            <LuExternalLink className='w-6 h-6' />
-                        </a>
-
-                    </div>
+                <div className="flex px-4 py-2 bg-black/60 backdrop-blur-[2px] rounded-tl-2xl rounded-br-lg items-end justify-end gap-4">
+                    <a target="_blank" href={item.sourceUrl}>
+                        <FaGithub className="w-6 h-6 hover:scale-110 transition" />
+                    </a>
+                    <a target="_blank" href={item.liveUrl}>
+                        <LuExternalLink className="w-6 h-6 hover:scale-110 transition" />
+                    </a>
                 </div>
-
             </div>
 
+            <div className="mt-4">
+                <h3 className="text-2xl font-bold mb-1 line-clamp-1">{item.name}</h3>
 
-        </div >
+                <p className="line-clamp-2 mb-4 text-white/50">{item.description}</p>
+
+                <div className="flex flex-wrap text-[12px] gap-2 mb-4">
+                    {item.stack.map((tool, index) => (
+                        <div
+                            key={index}
+                            className="flex gap-1 py-1 px-2 rounded-sm bg-white/30 items-center"
+                        >
+                            {tool.icon ? (
+                                <Image src={tool.icon} alt={tool.name} className="w-3 h-3" />
+                            ) : (
+                                ""
+                            )}
+                            <p>{tool.name}</p>
+                        </div>
+                    ))}
+                </div>
+
+
+            </div>
+        </div>
     )
 }
 
 export default ProjectCard
-
-const stack = ["React", "CSS", "MongoDB", "Node JS", "Express JS"]

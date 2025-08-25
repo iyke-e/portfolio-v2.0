@@ -1,7 +1,11 @@
-import Button from '@/components/ui/Button';
-import { projectProp } from '@/data/project';
-import Link from 'next/link';
+import { ProjectProp } from '@/data/project';
+import { FaGithub } from "react-icons/fa";
+import { LuExternalLink } from "react-icons/lu"
+
+
 import React from 'react'
+import Link from 'next/link';
+import Button from '@/components/ui/Button';
 
 
 
@@ -10,7 +14,7 @@ interface DesktopProjectAnimatedSectionProp {
     nextIndex: number;
     animateNext: Boolean;
     nextNextIndex: number;
-    project: projectProp[];
+    project: ProjectProp[];
     handleProjectClick: (index: number) => void
 }
 
@@ -18,22 +22,39 @@ const DesktopProjectAnimatedSection = ({ project, activeIndex, nextIndex, animat
 
 
     return (
-        <div className=" hidden lg:block relative overflow-hidden pad-auto py-10 text-white">
+        <div className=" hidden lg:block relative overflow-hidden pad-auto py-4 md:py-10 text-white">
 
             <div className="hidden md:block">
                 <div className="flex items-end">
                     <div className="grid grid-cols-2 h-80  gap-6">
                         <div className="flex flex-col justify-between gap-4  py-10">
+
                             <div>
-                                <h2 className="text-4xl mb-2">
+                                <p className="text-white mb-2">Featured Project</p>
+
+                                <h2 className="text-4xl mb-3">
                                     {project[activeIndex].name}
                                 </h2>
                                 <p >{project[activeIndex].description}</p>
                             </div>
                             <div>
+
+
                                 <Link href="/">
                                     <Button>Read More</Button>
                                 </Link>
+                                <ul className='flex items-center justify-end gap-4 cursor-pointer'>
+                                    <li>
+                                        <a target='_blank' href={project[activeIndex].sourceUrl} className='flex items-center gap-4'>
+                                            <FaGithub className='w-8 h-8' />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target='_blank' href={project[activeIndex].liveUrl} className='flex items-center gap-4'>
+                                            <LuExternalLink className="w-8 h-8 hover:scale-110 transition" />
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 

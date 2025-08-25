@@ -13,7 +13,7 @@ const FullExperience = () => {
             <div className='grid'>
                 {
                     experiences.map((item, index) => (
-                        <div key={index} className={`${index % 2 === 0 ? "bg-white/5 " : ""} pad-auto py-6 md:py-10 cursor-pointer hover:bg-white/10 md:grid md:grid-cols-[5fr_4fr] md:items-center`}>
+                        <div key={index} className={`${index % 2 === 0 ? "bg-white/2 " : ""} pad-auto py-6 md:py-10 md:grid md:grid-cols-[5fr_4fr] md:items-center`}>
                             <div className='mb-4 lg:mb-0'>
                                 <h3 className='font-bold mb-2 text-lg md:text-xl'>{item.role} at {item.company} ({item.type})</h3>
                                 <p className='text-white/70'>{item.description}</p>
